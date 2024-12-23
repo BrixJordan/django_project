@@ -1,12 +1,167 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header section styling */
+        .head {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .navigator_top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navigator_top ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navigator_top li {
+            margin-right: 20px;
+        }
+
+        .navigator_top li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Content section styling */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: #f4f4f4;
+        }
+
+        .content div {
+            width: 45%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        h4 a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        h4 a:hover {
+            background-color: #0056b3;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            display: block;
+            margin-top: 20px;
+        }
+
+        /* Footer section styling */
+        .footer {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer .social-links a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .footer .social-links img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer .social-links img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .content div {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .image-container img {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>HELLO WELLCOME TO OUR E-COMMERCE PLATFORM</h1>
+    <section class="head">
+        <div class="navigator_top">
+            <div>
+                <!-- <img src="logo ng sony" alt=""> -->
+                <!-- Add a logo image here if needed -->
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div>
+            <div>
+                <h1>Experience the Best of Sony Appliances</h1>
+                <h4><a href="{% url 'login'%}" id="getStartedBtn">Get Started</a></h4>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="{% static 'landing/images/pic1.jpg' %}" alt="Sony Appliances on display">
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+        </div>
+    </section>
+    
     
 </body>
 </html>
